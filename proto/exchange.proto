@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package WsOrder;
+
+enum OrderStatus{
+  Created = 0;
+  Completed = 1;
+  Reject = 2;
+  // PartialComplete  = 3;
+}
+
+message Order{
+  enum Type{
+    Buy = 0;
+    Sell = 1;
+  }
+  string id = 1;
+  Type type = 3;
+  OrderStatus status = 4;
+
+  // let make it simple, Order only care about price and quantity
+  double price = 5;
+  uint64 quantity = 6;
+}
+
+
+message OrderUpdate {
+  string id = 2;
+  Order order = 3;
+}
+
+// Client -> Server
+message ClientMessage{
+  Order order = 3;
+}
+
+// Server -> Client
+message ServerMessage{
+  OrderUpdate orderUpdate = 3;
+}

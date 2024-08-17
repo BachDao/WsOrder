@@ -1,0 +1,4 @@
+**build**
+.idea
+**/proto/*.pb.h
+**/proto/*.pb.cc
