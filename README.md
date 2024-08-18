@@ -151,3 +151,6 @@ between different components. These copies should be optimized to enhance perfor
 
 - **Timeout Calculation**: The timeout for retransmissions is set to a fixed value.
 It should be dynamically calculated and update based on network behavior.
+
+- **Connection Establish**: Need to be more specific about the way that Connection is
+established and maintained (using Control messages)
